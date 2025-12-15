@@ -41,5 +41,17 @@ pipeline {
                 sh "npm install"
             }
         }
+        stage('Build & Deploy to Docker') {
+            steps {
+                script {
+                    sh 'docker build -t hotstar-clone .'
+                    // Stop old container if running (ignore errors if not existing)
+                    sh 'docker stop hotstar-container || true'
+                    sh 'docker rm hotstar-container || true'
+                    // Run new container on Port 3000
+                    sh 'docker run -d -p 3000:80 --name hotstar-container hotstar-clone'
+                }
+            }
+        }
     }
 }
