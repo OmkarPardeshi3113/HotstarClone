@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/YOUR_GITHUB_USERNAME/HotstarClone.git'
+                git branch: 'main', url: 'https://github.com/OmkarPardeshi3113/HotstarClone.git'
             }
         }
         stage('SonarQube Analysis') {
