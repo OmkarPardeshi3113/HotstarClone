@@ -24,7 +24,7 @@ pipeline {
                     sh '''
                     $SCANNER_HOME/bin/sonar-scanner \
                     -Dsonar.projectKey=hotstar-clone \
-                    -Dsonar.organization=YOUR_SONAR_ORG_KEY \
+                    -Dsonar.organization=omkarpardeshi3113\
                     -Dsonar.sources=src \
                     -Dsonar.host.url=https://sonarcloud.io
                     '''
